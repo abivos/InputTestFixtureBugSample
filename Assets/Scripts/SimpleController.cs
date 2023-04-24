@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class SimpleController : MonoBehaviour
+namespace Sample
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public class SimpleController : MonoBehaviour
+	{
+		private void OnMove(InputValue inputValue)
+		{
+			var vector2 = inputValue.Get<Vector2>();
+			var cachedTransform = transform;
+			var oldPosition = cachedTransform.position;
+			var newPosition = new Vector3(oldPosition.x + vector2.x, oldPosition.y + vector2.y, oldPosition.z);
+			cachedTransform.position = newPosition;
+		}
+	}
 }
