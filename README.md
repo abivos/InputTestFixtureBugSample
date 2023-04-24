@@ -1,2 +1,4 @@
 # InputTestFixtureBugSample
-Sample repository reproducing error when running all unit tests when one of the fixtures uses InputTestFixture
+Sample repository reproducing error when running all unit tests when one of the fixtures uses InputTestFixture.
+
+`TestB` is successful when run in isolation, but fail when run with other tests.
